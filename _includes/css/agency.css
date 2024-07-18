@@ -308,8 +308,6 @@ header .intro-text .intro-heading {
     header .intro-text {
         padding-top: 300px;
         padding-bottom: 200px;
-        /* padding-top: 100px;
-        padding-bottom: 50px; */
     }
 
     header .intro-text .intro-lead-in {
@@ -318,8 +316,8 @@ header .intro-text .intro-heading {
         /* font-size: 40px;
         font-style: italic;
         line-height: 40px; */
-        font-size: 20px;
-        line-height: 20px;
+        font-size: 30px;
+        line-height: 30px;
     }
 
     header .intro-text .intro-heading {

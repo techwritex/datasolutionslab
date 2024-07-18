@@ -279,7 +279,8 @@ header {
 }
 
 header .intro-text {
-    padding-top: 100px;
+    /* padding-top: 100px; */
+    padding-top: 50px;
     padding-bottom: 50px;
 }
 
@@ -287,7 +288,7 @@ header .intro-text .intro-lead-in {
     margin-bottom: 25px;
     font-family: {{ site.data.template.font.secondary }};
     font-size: 22px;
-    font-style: italic;
+    /* font-style: italic; */
     line-height: 22px;
 }
 

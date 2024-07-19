@@ -24,10 +24,10 @@ people:
   pic: 2
   position: Руководитель лаборатории
   social:
-    - title: twitter
-      url: #
-    - title: facebook
-      url: #
+    # - title: twitter
+    #   url: #
+    # - title: facebook
+    #   url: #
     - title: linkedin
       url: #
 

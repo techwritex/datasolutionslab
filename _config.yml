@@ -8,7 +8,7 @@ description: "Data Solutions Lab - Лаборатория решений в об
 
 
 # Team names, titles and social links
-# people:
+people:
 # - name: Kay Garland
 #   pic: 1
 #   position: Lead Designer
@@ -29,7 +29,7 @@ description: "Data Solutions Lab - Лаборатория решений в об
     - title: facebook
       url: #
     - title: linkedin
-      url: #  
+      url: #
 
 # - name: Diana Petersen
 #   pic: 3

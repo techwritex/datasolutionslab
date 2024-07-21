@@ -85,7 +85,8 @@ h6 {
 .open .dropdown-toggle.btn-primary {
     border-color: #{{ site.data.template.color.primary }};
     color: #fff;
-    background-color: #{{ site.data.template.color.secondary }};
+    /* background-color: #{{ site.data.template.color.secondary }}; */
+    background-color: transparent;
 }
 
 .btn-primary:active,
@@ -243,16 +244,16 @@ fieldset[disabled] .btn-xl.active {
         padding: 25px 0;
         border: 0;
         background-color: transparent;
-        -webkit-transition: padding .3s;
+        /* -webkit-transition: padding .3s;
         -moz-transition: padding .3s;
-        transition: padding .3s;
+        transition: padding .3s; */
     }
 
     .navbar-default .navbar-brand {
         font-size: 2em;
-        -webkit-transition: all .3s;
+        /* -webkit-transition: all .3s;
         -moz-transition: all .3s;
-        transition: all .3s;
+        transition: all .3s; */
     }
 
     .navbar-default .navbar-nav>.active>a {

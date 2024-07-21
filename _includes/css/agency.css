@@ -199,7 +199,8 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-    background-color: #fff;
+    /* background-color: #fff; */
+    background-color: transparent;
 }
 
 .navbar-default .navbar-toggle:hover,

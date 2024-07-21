@@ -222,7 +222,7 @@ fieldset[disabled] .btn-xl.active {
 .navbar-default .nav li a:focus {
     outline: 0;
     /* color: #{{ site.data.template.color.primary }}; */
-    color: #025dbf;
+    color: #4391e6;
 }
 
 .navbar-default .navbar-nav>.active>a {

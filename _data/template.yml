@@ -1,6 +1,5 @@
-# Color settings (hex-codes without the leading hash-tag)
+# Color settings (hex-codes without the leading hash-tag) primary: 106ccf 5C87BF
 color:
-  #primary-old: 106ccf 5C87BF
   primary: 57BB8DB
   primary-dark: 39A1CC
   secondary: fff   

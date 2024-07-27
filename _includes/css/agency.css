@@ -321,12 +321,12 @@ header .intro-text .intro-heading {
     }
 
     header .intro-text .intro-lead-in {
-        margin-bottom: 25px;
+        /* margin-bottom: 25px; */
         font-family: {{ site.data.template.font.secondary }};
         /* font-size: 40px;
         font-style: italic;
         line-height: 40px; */
-        font-size: 25px;
+        font-size: 20px;
         line-height: 30px;
         margin-bottom: 50px;
     }

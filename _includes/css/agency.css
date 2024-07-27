@@ -84,7 +84,7 @@ h6 {
 .btn-primary:active,
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
-    border-color: #{{ site.data.template.color.primary }};
+    border-color: #{{ site.data.template.color.primary-dark }};
     color: #fff;
     /* background-color: #{{ site.data.template.color.secondary }}; */
     background-color: transparent;
@@ -111,8 +111,8 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-    border-color: #{{ site.data.template.color.primary }};
-    background-color: #{{ site.data.template.color.primary }};
+    border-color: #{{ site.data.template.color.primary-dark }};
+    background-color: #{{ site.data.template.color.primary-dark }};
 }
 
 .btn-primary .badge {
@@ -140,7 +140,7 @@ fieldset[disabled] .btn-primary.active {
     border-color: #{{ site.data.template.color.primary-dark }};
     color: #fff;
     /* background-color: #{{ site.data.template.color.secondary }}; */
-    background-color: transparent;
+    background-color: #{{ site.data.template.color.primary-dark }};
 }
 
 .btn-xl:active,

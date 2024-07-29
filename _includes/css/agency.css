@@ -121,7 +121,7 @@ fieldset[disabled] .btn-primary.active {
 }
 
 .btn-xl {
-    padding: 20px 40px;
+    padding: 20px 30px;
     border-color: #{{ site.data.template.color.secondary }};
     border-radius: 3px;
     text-transform: uppercase;
@@ -351,7 +351,7 @@ section h2.section-heading {
     margin-top: 0;
     margin-bottom: 15px;
     /* font-size: 40px; */
-    font-size: 35px;
+    font-size: 30px;
 }
 
 section h3.section-subheading {

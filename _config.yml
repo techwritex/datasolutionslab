@@ -1,65 +1,11 @@
-url: http://techwritex.github.io/datasolutionslab
-baseurl: 
-
-# Site settings
 title: Data Solutions Lab
-email: hello@datasolutionslab.ru
-description: "Data Solutions Lab - Лаборатория решений в области данных"
+email: your-email@example.com
+description: Проектирование архитектуры данных и систем принятия решений.
+baseurl: "" 
+url: "https://datasolutionslab.ru"
 
-
-# Team names, titles and social links
-people:
-# - name: Kay Garland
-#   pic: 1
-#   position: Lead Designer
-#   social:
-#     - title: twitter
-#       url: #
-#     - title: facebook
-#       url: #
-#     - title: stack-overflow
-#       url: #
-
-- name: Владимир Юсупов
-  pic: 2
-  position: Руководитель лаборатории
-  social:
-    # - title: twitter
-    #   url: #
-    # - title: facebook
-    #   url: #
-    - title: linkedin
-      url: https://www.linkedin.com/in/vladimir-yusupov/
-
-# - name: Diana Petersen
-#   pic: 3
-#   position: Lead Developer
-#   social:
-#     - title: twitter
-#       url: #
-#     - title: facebook
-#       url: #
-#     - title: google-plus
-#       url: #
-
-# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
-social:
-  - title: twitter
-    url: http://twitter.com/jekyllrb
-  - title: facebook
-    url:
-  - title: stack-overflow
-    url: http://stackoverflow.com/questions/tagged/jekyll
-  - title: bitbucket 
-    url: http://bitbucket.org/jekyll
-  - title: github
-    url: http://github.com/jekyll
-
-# Postal address (add as many lines as necessary)
-address:
-  - line: 3481 Melrose Place
-  - line: Beverly Hills, CA 90210
-
-# Build settings
+# Настройки сборки
 markdown: kramdown
-permalink: pretty
+theme: minima # Оставляем базу, но будем использовать свой layout
+plugins:
+  - jekyll-feed

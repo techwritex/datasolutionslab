@@ -1,22 +1,21 @@
 <!DOCTYPE html>
-<html>
-
-  {% include head.html %}
-
-
-    <body id="page-top" class="index">
-
-    {% include header.html %}
-    <!--  include portfolio_grid.html  -->
-    <!--  include about.html  -->
-    {% include services.html %}
-    {% include team.html %}
-    <!--  include clients.html  -->
-    {% include contact.html %}
-    {% include footer.html %}
-    {% include modals.html %}
-    {% include js.html %}
-
-    </body>
-    {% include google_analytics.html %}
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Data Solutions Lab - Лаборатория решений в области данных">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <link rel="icon" type="image/svg+xml" href="{{ '/assets/img/favicon.svg' | relative_url }}">
+    <link rel="alternate icon" type="image/png" href="{{ '/assets/img/favicon.png' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  </head>
+<body>
+  <main class="container">
+    {{ content }}
+  </main>
+  <footer class="footer">
+    <p>&copy; {{ site.time | date: '%Y' }} Владимир Юсупов</p>
+  </footer>
+</body>
 </html>

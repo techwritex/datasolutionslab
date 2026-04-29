@@ -1,0 +1,17 @@
+# Внутренняя навигация (якоря разделов)
+main:
+  - name: "Услуги"
+    url: "#services"
+  - name: "Технологии"
+    url: "#tech"
+  - name: "Руководитель"
+    url: "#manager"
+
+# Внешние ссылки для связи
+social:
+  - name: "Telegram"
+    url: "https://t.me/v_yusupov"
+  - name: "LinkedIn"
+    url: "https://www.linkedin.com/in/vladimir-yusupov/"
+  - name: "Email"
+    url: "mailto:your-email@example.com"

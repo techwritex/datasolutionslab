@@ -1,0 +1,8 @@
+<section id="tech">
+    <h2>ls ./technologies</h2>
+    <div class="tech-stack">
+      {% for item in site.data.tech %}
+      <span class="tech-item">{{ item.name }}</span>
+      {% endfor %}
+    </div>
+  </section>

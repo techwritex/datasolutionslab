@@ -1,0 +1,127 @@
+---
+---
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --accent-color: #22863a; // "Терминальный" зеленый для акцентов
+  --border-color: #000000;
+  --mono-font: 'JetBrains Mono', monospace;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--mono-font); // Весь сайт на моноширинном шрифте
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  min-height: 100vh;
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+  text-transform: lowercase; // Терминальный стиль часто избегает капса
+}
+
+h1::before, h2::before {
+  content: "> "; // Имитация строки терминала
+  color: var(--accent-color);
+}
+
+.hero {
+  border-bottom: 1px double var(--border-color);
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+.service-card {
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  transition: background 0.2s;
+
+  &:hover {
+    background-color: #f5f5f5;
+  }
+
+  h3 { margin-top: 0; }
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 1rem 0;
+  
+  .tech-item {
+    border: 1px solid var(--border-color);
+    padding: 0.2rem 0.6rem;
+    font-size: 0.9rem;
+    &::before { content: "[ "; }
+    &::after { content: " ]"; }
+  }
+}
+
+.manager-section {
+  border-top: 1px solid var(--border-color);
+  padding-top: 2rem;
+  
+  .btn-book {
+    display: inline-block;
+    background: var(--text-color);
+    color: var(--bg-color);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    &:hover {
+      background: var(--accent-color);
+    }
+  }
+}
+
+.footer {
+  text-align: center; /* Выравнивание копирайта по центру */
+  padding: 2rem 0;
+  font-size: 0.8rem;
+  border-top: 1px solid var(--border-color);
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: underline;
+  &:hover { color: var(--accent-color); }
+}
+
+/* Добавьте это в конец вашего main.scss */
+
+.contact-box {
+  border: 2px solid var(--text-color); /* Более жирная рамка для явного акцента */
+  padding: 1.5rem;
+  margin-top: 1rem;
+  background-color: #f9f9f9; /* Легкое выделение фоном */
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  
+  li {
+    margin-bottom: 0.5rem;
+    &::before {
+      content: ">> ";
+      color: var(--accent-color);
+    }
+  }
+}
+
+.contact-section h2::before {
+  content: "# "; /* Отличающийся префикс для секции контактов */
+}

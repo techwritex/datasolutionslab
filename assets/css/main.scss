@@ -125,3 +125,119 @@ a {
 .contact-section h2::before {
   content: "# "; /* Отличающийся префикс для секции контактов */
 }
+
+.notes-section {
+  padding: 2rem 0;
+
+  h2::before {
+    content: "# ";
+  }
+}
+
+.notes-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+
+.note-item {
+  margin-bottom: 0.8rem;
+  font-family: var(--font-mono);
+}
+
+.note-date {
+  opacity: 0.5;
+  margin-right: 1rem;
+}
+
+.note-pointer {
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.note-link {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+
+  &:hover {
+    border-bottom-color: var(--text-color);
+  }
+}
+
+.terminal-footer {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+/* Навигация в стиле терминала */
+.site-nav {
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  font-family: var(--font-mono);
+}
+
+.nav-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.nav-prompt {
+  color: var(--accent-color);
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+  }
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-links {
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+
+/* Стиль для ссылки-приглашения */
+.nav-prompt-link {
+  text-decoration: none;
+  color: inherit; /* Сохраняем исходный цвет */
+  
+  &:hover .nav-prompt {
+    opacity: 0.8;
+    /* Можно добавить эффект мигания или смены цвета при наведении, если захочется */
+  }
+}
+
+.nav-prompt {
+  color: var(--accent-color);
+  font-weight: bold;
+  margin-right: 10px;
+}

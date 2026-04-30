@@ -1,17 +1,19 @@
 # Внутренняя навигация (якоря разделов)
 main:
   - name: "Услуги"
-    url: "#services"
+    url: "/#services"   
   - name: "Технологии"
-    url: "#tech"
-  - name: "Руководитель"
-    url: "#manager"
+    url: "/#tech"
+  - name: "Заметки"
+    url: "/notes/"      
+  - name: "Контакты"
+    url: "/#manager"
 
 # Внешние ссылки для связи
 social:
   - name: "Telegram"
-    url: "https://t.me/v_yusupov"
+    url: "https://t.me/vladimiryusupov"
   - name: "LinkedIn"
     url: "https://www.linkedin.com/in/vladimir-yusupov/"
   - name: "Email"
-    url: "mailto:your-email@example.com"
+    url: "mailto:hello@datasolutionslab.ru"

@@ -11,6 +11,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
   </head>
 <body>
+  <nav class="site-nav">
+    <div class="nav-container">
+      <a href="/" class="nav-prompt-link">
+        <span class="nav-prompt">dsl@root:~$</span>
+      </a>
+      
+      <ul class="nav-links">
+        
+          <li>
+            <a href="/#services" class="nav-link">
+              ./услуги
+            </a>
+          </li>
+        
+          <li>
+            <a href="/#tech" class="nav-link">
+              ./технологии
+            </a>
+          </li>
+        
+          <li>
+            <a href="/notes/" class="nav-link">
+              ./заметки
+            </a>
+          </li>
+        
+          <li>
+            <a href="/#manager" class="nav-link">
+              ./контакты
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+</nav>
   <main class="container">
     <section class="hero">
     <p style="opacity: 0.5;">[system]: initialising data_solutions_lab...</p>
@@ -31,7 +66,7 @@
       <div class="service-card">
         <h3>Сквозная аналитика и BI</h3>
         <p>Построение отчетности и дашбордов для принятия управленческих решений</p>
-        <small style="opacity: 0.7;">Сокращение Time-to-Insight и внедрение Data-Driven культуры.</small>
+        <small style="opacity: 0.7;">Сокращение времени на получение ответов на основе данных.</small>
       </div>
       
     </div>
@@ -58,8 +93,7 @@
 
 <section id="manager" class="manager-section">
     <h2>whoami</h2>
-    <p><strong>Владимир Юсупов</strong> — эксперт с более чем 15-летним опытом в индустрии. Быстро погружается в предметную область (домен) и переводит 
-        сложные бизнес-задачи в надежную техническую архитектуру.</p>
+    <p><strong>Владимир Юсупов</strong> — эксперт с более чем 15-летним опытом в индустрии. Быстро погружаюсь в предметную область (домен) и перевожу сложные бизнес-задачи в надежное техническое решение.</p>
     <p>Автор практического руководства по созданию хранилищ данных на open source: 
        <a href="https://dwh-book.ru/" target="_blank">dwh-book.ru</a>.
     </p>
@@ -89,4 +123,13 @@
     <p>&copy; 2026 Владимир Юсупов</p>
   </footer>
 </body>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XRRRF9FBGB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XRRRF9FBGB');
+</script>
 </html>

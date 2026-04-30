@@ -1,1 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-04-29T11:39:16+03:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Data Solutions Lab</title><subtitle>Проектирование архитектуры данных и систем принятия решений.</subtitle></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2026-04-30T05:56:32+03:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Data Solutions Lab</title><subtitle>Проектирование архитектуры данных и систем принятия решений.</subtitle><entry><title type="html">dbt: смена парадигмы разработки хранилищ данных</title><link href="http://localhost:4000/2026/02/23/dbt-smena-paradigmy-razrabotki-khranilisch-dannykh.html" rel="alternate" type="text/html" title="dbt: смена парадигмы разработки хранилищ данных" /><published>2026-02-23T00:00:00+03:00</published><updated>2026-02-23T00:00:00+03:00</updated><id>http://localhost:4000/2026/02/23/dbt-smena-paradigmy-razrabotki-khranilisch-dannykh</id><content type="html" xml:base="http://localhost:4000/2026/02/23/dbt-smena-paradigmy-razrabotki-khranilisch-dannykh.html"><![CDATA[<p>Более 15 лет я работал с продуктами семейства SAP. Это был путь глубокой экспертизы в рамках одного вендора. Но сегодня рынок BI-решений в России оказался на развилке: либо продолжать эксплуатацию “застывших” систем без поддержки, либо искать альтернативу в open-source.</p>
+
+<p>В своих поисках я открыл для себя <strong>dbt (data build tool)</strong>. Но это не просто инструмент, это смена подхода и процессов разработки хранилищ данных.</p>
+
+<h3 id="почему-dbt">Почему dbt?</h3>
+
+<ul>
+  <li><strong>Уход от vendor lock-in:</strong> Построение аналитики на базе open-source решений (например, связка dbt + PostgreSQL) дает все-таки большую свободу в построении надежных аналитических решений.</li>
+  <li><strong>Трансформация как код:</strong> dbt превращает SQL-запросы в управляемые модели с контролем версий и тестированием.</li>
+  <li><strong>Автоматизация документирования:</strong> Каждый проект автоматически документируется, исключая рассинхрон между реализацией и базой знаний.</li>
+</ul>
+
+<p>Это лишь малая часть преимуществ использования dbt.</p>
+
+<p>Я опубликовал подробное практическое руководство по dbt, где на примере прототипа хранилища данных для каршеринговой компании разбираю все этапы: от развертывания проекта до создания витрин и оркестрации.</p>]]></content><author><name></name></author><summary type="html"><![CDATA[Более 15 лет я работал с продуктами семейства SAP. Это был путь глубокой экспертизы в рамках одного вендора. Но сегодня рынок BI-решений в России оказался на развилке: либо продолжать эксплуатацию “застывших” систем без поддержки, либо искать альтернативу в open-source.]]></summary></entry></feed>

@@ -15,11 +15,11 @@ layout: default
     <p>---</p>
     
     {% if page.show_guide_link != false %}
-    <p>Развернутые принципы проектирования читайте в моем руководстве: 
+    <p>Развернутые принципы проектирования и создания хранилищ с использованием dbt читайте в моем руководстве: 
        <a href="https://dwh-book.ru/" target="_blank">dwh-book.ru</a>
     </p>
     {% endif %}
 
-    <p class="terminal-end">{{ page.terminal_end | default: "EOF" }}</p>
+    <p class="terminal-end">{{ page.terminal_end | default: "" }}</p>
   </footer>
 </article>

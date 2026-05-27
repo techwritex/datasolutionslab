@@ -1,6 +1,5 @@
 - name: "PostgreSQL"
 - name: "dbt"
 - name: "Apache Airflow"
-- name: "Apache Superset"
-- name: "Yandex DataLens"
-- name: "др."
+- name: "Lightdash"
+- name: "Yandex Cloud"

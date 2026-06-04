@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Data Solutions Lab - Лаборатория решений в области данных">
+    <title>Переосмысление BI - от рисования дашбордов к Агентской Инженерии | Data Solutions Lab</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+    <link rel="alternate icon" type="image/png" href="/assets/img/favicon.png">
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+  </head>
+<body>
+  <header id="header">
+  <div class="container nav-inner">
+      <a href="/" class="logo">DataSolutions<span>Lab</span></a>
+      
+      <ul class="nav-links">
+          
+          <li>
+              <a href="/#services">Услуги</a>
+          </li>
+          
+          <li>
+              <a href="/#tech">Технологии</a>
+          </li>
+          
+          <li>
+              <a href="/notes/">Заметки</a>
+          </li>
+          
+          <li>
+              <a href="/#manager">Контакты</a>
+          </li>
+          
+          <li>
+              <a href="/dwh-book" class="btn" style="padding: 10px 20px; font-size: 0.9rem; color: #fff;">Купить книгу</a>
+          </li>
+      </ul>
+  </div>
+</header>
+  
+  <main>
+    <article class="container post-content">
+  <header class="post-header">
+    <p class="post-meta">05.05.2026</p>
+    <h1>Переосмысление BI - от рисования дашбордов к Агентской Инженерии</h1>
+  </header>
+
+  <section class="post-body">
+    <p>Прочитал довольно интересную и любопытную статью Тристана Хэнди (CEO dbt Labs) <a href="https://roundup.getdbt.com/p/bis-second-unbundling">BI’s Second Unbundling</a> о его видении будущего презетационного слоя данных. Отмечу некоторые моменты статьи и поделюсь своими мыслями на этот счет.</p>
+
+<p><strong>Если коротко</strong>: эпоха, когда аналитики часами и днями создавали дашборды и отчеты в различных BI-инструментах, подходит к концу.</p>
+
+<p>Программная инженерия со своим подходом к разработке, функционированию и сопровождению программного обеспечения “поглощает” многие “смежные” сферы ИТ-индустрии. Мы видим это на примерах data-as-code, docs-as-code и др. Business Intelligence здесь не исключение: bi-as-code для некоторых становится уже привычным делом. Пока не так массово, но все же тренд уже заметен.</p>
+
+<p>По этому поводу выделю три аспекта из статьи Тристана:</p>
+
+<ol>
+  <li>
+    <p><strong>Смена интерфейса</strong>: основным рабочим пространством становится не GUI (интерфейс BI-инструмента), а ИИ-агент (например, Claude Code). Создать сейчас рабочий дашборд в диалоге с агентом дело 15 минут.</p>
+  </li>
+  <li>
+    <p><strong>BI-as-code</strong>: дашборды превращаются в декларативные YAML-файлы, которые живут в Git-репозитории прямо рядом с вашим dbt-проектом. Визуализация - это теперь просто рендеринг через React-библиотеки.</p>
+  </li>
+  <li>
+    <p><strong>“Трансформация” аналитика</strong>: работа самих BI/дата аналитиков меняется. Теперь это не просто специалист, который работает с различными графиками (условно), а инженер презентационного слоя, который управляет семантикой и понимает принципы фронтенд-разработки.</p>
+  </li>
+</ol>
+
+<p>Также Тристан подчеркивает одну проблему (или одну из проблем) - идентификация - который является первым шагом в обеспечении безопасности данных. Создать график или дашборд с помощью ИИ не вызывает большой сложности. Но обеспечение безопасности, row-level security и бесшовного SSO в новой архитектуре является пока достаточно серьезным вызовом, который еще предстоит решить.</p>
+
+<p><strong>В качестве заключения поделюсь своим мнением, которым ранее уже делился.</strong></p>
+
+<p>Мир не стоит на месте. Очень многие профессии испытывают на себе влияние искусственного интеллекта. В мире BI мы тоже должны учитывать это влияние. Понятно, что все компании вряд ли поменяют привычные BI-платформы и разом перейдут на новую парадигму. Но всё к этому движется, хотим мы этого или нет. Поэтому, на мой взгляд, разумно сейчас погружаться в эту тему. Может быть в виде каких-то pet-проектов или в качестве факультативных задач на работе.</p>
+
+  </section>
+
+  <footer class="post-footer">
+    
+    <div style="background: #fdfdfd; border: 1px solid var(--border-color); border-left: 4px solid var(--primary-color); padding: 24px; border-radius: 8px;">
+        <h4 style="margin-bottom: 10px;">Прокачайте свои навыки архитектуры данных</h4>
+        <p style="margin: 0; font-size: 1rem;">Развернутые принципы проектирования и создания аналитических хранилищ читайте в моем новом практическом руководстве: 
+           <a href="/dwh-book" style="font-weight: 600;">Платформа данных на open-source →</a>
+        </p>
+    </div>
+    
+  </footer>
+</article>
+  </main>
+  
+  <footer>
+    <div class="container">
+        <p>&copy; 2026 Владимир Юсупов | Data Solutions Lab</p>
+    </div>
+  </footer>
+
+  
+
+  <script>
+      // Скрипт для добавления тени шапке при скролле
+      const header = document.getElementById('header');
+      window.addEventListener('scroll', () => {
+          if (window.scrollY > 10) { header.classList.add('scrolled'); } 
+          else { header.classList.remove('scrolled'); }
+      });
+  </script>
+</body>
+</html>

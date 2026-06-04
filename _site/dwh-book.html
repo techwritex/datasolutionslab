@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Платформа данных на open-source | Руководство</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+           1. ПЕРЕМЕННЫЕ И БАЗОВЫЕ НАСТРОЙКИ
+           ========================================================================== */
+        :root {
+            --primary-color: #ae58d9; /* Акцентный фиолетовый */
+            --primary-hover: #9646c3;
+            --text-dark: #111827;
+            --text-body: #4b5563;
+            --bg-main: #fefefe;       /* Единый мягкий белый фон для всего сайта */
+            --border-color: #e5e7eb;
+            
+            --max-width: 1200px;
+            --font-main: 'Inter', sans-serif;
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--text-body);
+            background-color: var(--bg-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        img { max-width: 100%; height: auto; display: block; }
+
+        /* Типографика */
+        h1, h2, h3, h4 { color: var(--text-dark); font-weight: 700; line-height: 1.2; }
+        h2 { font-size: 2.25rem; text-align: center; margin-bottom: 1rem; }
+        .section-subtitle { text-align: center; font-size: 1.125rem; max-width: 600px; margin: 0 auto 3rem auto; }
+
+        section { padding: 100px 0; }
+
+        /* Кнопки */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .btn:hover { background-color: var(--primary-hover); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(174, 88, 217, 0.3); }
+        .btn-outline { background-color: transparent; border: 2px solid var(--border-color); color: var(--text-dark); }
+        .btn-outline:hover { border-color: var(--text-dark); background-color: transparent; box-shadow: none; transform: none; }
+
+        /* ==========================================================================
+           2. НАВИГАЦИЯ (Navbar)
+           ========================================================================== */
+        header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            /* rgba(253, 253, 253, 0.95) - это HEX #fdfdfd с прозрачностью 95% */
+            background-color: #fefefe;
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            transition: box-shadow 0.3s;
+        }
+        header.scrolled { box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; height: 70px; }
+        .logo { font-size: 1.25rem; font-weight: 800; color: var(--text-dark); text-decoration: none; letter-spacing: -0.5px; }
+        .logo span { color: var(--primary-color); }
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--text-body); font-weight: 500; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--primary-color); }
+        .nav-links .btn { padding: 10px 20px; font-size: 0.95rem; }
+
+        /* ==========================================================================
+           3. HERO СЕКЦИЯ
+           ========================================================================== */
+        .hero { padding: 50px 0 100px 0; }
+        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .hero-label { display: inline-block; background-color: rgba(174, 88, 217, 0.1); color: var(--primary-color); padding: 6px 12px; border-radius: 20px; font-size: 0.875rem; font-weight: 600; margin-bottom: 1.5rem; }
+        .hero h1 { font-size: 3.5rem; letter-spacing: -1.5px; margin-bottom: 1.5rem; }
+        .hero p { font-size: 1.25rem; margin-bottom: 2.5rem; max-width: 500px; }
+        .hero-actions { display: flex; gap: 15px; }
+        /* .hero-image img { border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.06); width: 100%; max-width: 450px; margin: 0 auto; } */
+
+        /* ==========================================================================
+           4. ОГЛАВЛЕНИЕ (Chapters)
+           ========================================================================== */
+        .chapters-list { max-width: 800px; margin: 0 auto; }
+        .chapter-item { display: flex; gap: 24px; padding: 30px 0; border-bottom: 1px solid var(--border-color); }
+        .chapter-number { font-size: 1.5rem; font-weight: 800; color: var(--border-color); }
+        .chapter-content h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+
+        /* Стили для блока синопсиса */
+        .synopsis-box {
+            max-width: 800px;
+            margin: 0 auto 4rem auto;
+            padding: 32px 40px;
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary-color);
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        }
+        .synopsis-box p {
+            font-size: 1.125rem;
+            color: var(--text-body);
+            margin-bottom: 1rem;
+        }
+        .synopsis-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ==========================================================================
+           5. ОБ АВТОРЕ (Author)
+           ========================================================================== */
+        .author-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 2fr; 
+            gap: 50px; 
+            align-items: center; 
+            max-width: 900px; 
+            margin: 0 auto; 
+            background: var(--bg-main); 
+            padding: 50px; 
+            border-radius: 16px; 
+            border: 1px solid var(--border-color); 
+            border-left: 4px solid var(--primary-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02); 
+        }
+        .author-img { border-radius: 50%; overflow: hidden; aspect-ratio: 1; border: 4px solid var(--border-color); }
+        .author-info h3 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+        .author-role { color: var(--primary-color); font-weight: 600; margin-bottom: 1.5rem; display: block; }
+        .author-info p { margin-bottom: 1rem; }
+
+        /* ==========================================================================
+           6. ТАРИФЫ (Pricing - 1 опция для MVP)
+           ========================================================================== */
+        .pricing-single {
+            max-width: 550px;
+            margin: 0 auto;
+        }
+        .price-card { 
+            background: var(--bg-main); 
+            border: 2px solid var(--primary-color); 
+            border-radius: 16px; 
+            padding: 50px 40px; 
+            text-align: center; 
+            position: relative; 
+            box-shadow: 0 20px 40px rgba(174, 88, 217, 0.08); 
+            transition: var(--transition); 
+        }
+        .popular-badge { 
+            position: absolute; 
+            top: -12px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            background: var(--primary-color); 
+            color: #fff; 
+            padding: 6px 16px; 
+            border-radius: 20px; 
+            font-size: 0.75rem; 
+            font-weight: 700; 
+            text-transform: uppercase; 
+            letter-spacing: 1px;
+        }
+        .price-card h3 { font-size: 1.75rem; margin-bottom: 1rem; }
+        .price-val { font-size: 3.5rem; font-weight: 800; color: var(--text-dark); margin-bottom: 0.5rem; letter-spacing: -1px; }
+        .price-desc { font-size: 1rem; margin-bottom: 2rem; }
+        .price-features { 
+            list-style: none; 
+            text-align: left; 
+            margin: 0 auto 2.5rem auto; 
+            max-width: 350px;
+        }
+        .price-features li { 
+            padding: 12px 0; 
+            border-bottom: 1px solid var(--border-color); 
+            font-size: 1rem; 
+            display: flex; 
+            align-items: center; 
+            gap: 12px; 
+        }
+        .price-features li::before { content: '✓'; color: var(--primary-color); font-weight: bold; font-size: 1.2rem; }
+
+        /* Блок информации о доставке */
+        .delivery-info { font-size: 0.875rem; color: var(--text-body); margin-top: 1.5rem; line-height: 1.4; }
+
+        /* ==========================================================================
+           7. FAQ (Аккордеон)
+           ========================================================================== */
+        .faq-wrapper { max-width: 800px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid var(--border-color); }
+        .faq-question { width: 100%; text-align: left; padding: 24px 0; background: none; border: none; font-size: 1.125rem; font-weight: 600; color: var(--text-dark); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .faq-question::after { content: '+'; font-size: 1.5rem; color: var(--text-body); transition: var(--transition); }
+        .faq-item.active .faq-question::after { transform: rotate(45deg); color: var(--primary-color); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .faq-item.active .faq-answer { padding-bottom: 24px; }
+
+        /* ==========================================================================
+           8. ФУТЕР И ЮРИДИЧЕСКАЯ ИНФОРМАЦИЯ (Footer & Legal)
+           ========================================================================== */
+           footer { padding: 60px 0; border-top: 1px solid var(--border-color); background-color: var(--bg-main); }
+        .footer-content { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px; }
+        .footer-logo { font-size: 1.5rem; font-weight: 800; color: var(--text-dark); }
+        
+        /* Стили для реквизитов */
+        .footer-legal { font-size: 0.875rem; color: var(--text-body); line-height: 1.6; }
+        .footer-legal p { margin-bottom: 5px; }
+        .legal-links { margin-top: 15px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        .legal-links a { color: var(--primary-color); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+        .legal-links a:hover { color: var(--primary-hover); text-decoration: underline; }
+        .copyright { font-size: 0.875rem; color: var(--text-body); margin-top: 20px; }
+
+        /* ==========================================================================
+           9. МЕДИА-ЗАПРОСЫ (Responsive)
+           ========================================================================== */
+        @media (max-width: 992px) {
+            .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+            .hero p { margin: 0 auto 2rem auto; }
+            .hero-actions { justify-content: center; }
+            .author-grid { grid-template-columns: 1fr; text-align: center; }
+            .author-img { max-width: 250px; margin: 0 auto; }
+        }
+        @media (max-width: 500px) {
+            .price-card { padding: 40px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="hero-label">Версия 1.3</span>
+                <h1>Платформа данных без вендор-лока</h1>
+                <p>Практическое руководство по созданию хранилища данных и аналитической системы на базе dbt Core, PostgreSQL, Airflow и Lightdash.</p>
+                <div class="hero-actions">
+                    <a href="#pricing" class="btn">Купить книгу</a>
+                    <a href="#chapters" class="btn btn-outline">Ознакомиться</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="/assets/img/dwh-book-cover.png" alt="Обложка книги Платформа данных на open-source">
+            </div>
+        </div>
+    </section>
+
+    <section id="chapters">
+        <div class="container">
+            <h2>О чем и для кого эта книга?</h2>
+            <p class="section-subtitle"></p>
+            
+            <div class="synopsis-box">
+                <p>Данная книга адресована, в первую очередь, таким же BI-консультантам и разработчиками хранилищ данных, как и я, которые на протяжении большей части своего профессионального пути взаимодействовали с решением одного вендора. Лично я более 15 лет проработал в основном с продуктами семейства SAP.</p>
+                <p>Процесс импортозамещения, подстегнутый уходом зарубежных вендоров из России, их отказом поддерживать текущие решения и продлевать лицензии, заставил отечественные компании активно искать альтернативное программное обеспечение.</p>
+                <p>Однако сложившиеся обстоятельства затрагивают не только бизнес, сталкивающийся с финансовыми потерями и репутационными рисками. Текущая ситуация вынудила многих экспертов, в том числе в области данных, встать перед серьезным выбором относительно своего дальнейшего профессионального развития.</p>
+                <p>Безусловно, можно спокойно продолжать работать с теми же самыми продуктами. Да, лицензии не продлеваются. Но само по себе программное обеспечение и построенные на нем информационные и аналитические системы никуда не делись. У российских специалистов накоплен огромный опыт для успешного сопровождения этих систем в течение длительного времени. Однако важно объективно оценивать ситуацию: ни о каком дальнейшем технологическом развитии речи уже не идет.</p>
+                <p>Для BI-разработчиков и других специалистов, занимающихся созданием аналитических решений, которые стремятся к дальнейшему технологическому росту, я выделяю следующие пути развития:</p>
+                <p>1. Изучение коммерческих отечественных и альтернативных зарубежных продуктов.</p>
+                <p>2. Изучение open-source технологий и инструментов.</p>
+                <p>Не хочу никого обидеть, но я принимал участие в тестировании отечественных решений по созданию хранилищ данных и отчетности в рамках импортозамещения. Тестирование показало, что данные продукты далеки от идеала и не покрывают всей функциональности той же линейки продуктов SAP. Понятно, что через какой-то период времени отечественные разработчики программного обеспечения доведут свои детища до текущего состояния лидеров рынка. Но велика вероятность, что за это время технологии зарубежных вендоров уйдут дальше. И придется снова догонять.                </p>
+                <p>Рассматривая варианты стороннего зарубежного ПО, мы неизбежно сталкиваемся с китайскими разработками, которые сейчас доминируют во многих секторах экономики. Однако ключевым фактором здесь остается риск введения ограничений со стороны китайских партнеров в отношении пользователей из России – хотя эта вероятность оценивается как невысокая, полностью исключать ее нельзя. В условиях завтрашней неопределенности этот риск, к сожалению, нужно учитывать.</p>
+                <p>Поэтому, на мой взгляд, логичнее ориентироваться на open-source продукты и строить аналитические системы на базе них.</p>
+                <p>В процессе ознакомления с данной книгой вы разработаете прототип платформы данных для выдуманной каршеринговой компании – выполните шаги по созданию, развертыванию, запуску, тестированию и документированию проекта с помощью нескольких востребованных в настоящее время в индустрии open-source инструментов. Но все-таки основной фокус учебного проекта направлен на изучение одного из них.</p>
+                <p>Книга задумана как теоретическое и практическое пособие по работе с dbt™ (data build tool). В его основу легли мои личные конспекты первоисточников и разнообразные материалы, собранные во время освоения этого программного обеспечения. Не следует рассматривать данное руководство как полноценный эквивалент курсам обучения или официальной документации; скорее, оно призвано стать отправной точкой для дальнейшего знакомства с функциональностью и архитектурой dbt™.</p>
+                <p>Вы можете бесплатно ознакомиться с полной текстовой версией книги на сайте проекта (dwh-book.ru), чтобы оценить структуру и подачу материала перед покупкой. Покупая книгу здесь, вы получаете готовый репозиторий с исходным кодом проекта и скрипт автоматического развертывания, а также поддержку в реализации проекта.</p>
+            </div>
+
+            <div class="chapters-list">
+                <h2>Основные логические разделы книги:</h2>
+                <p class="section-subtitle"></p>
+                <div class="chapter-item">
+                    <div class="chapter-number">01</div>
+                    <div class="chapter-content">
+                        <h3>Архитектура хранилищ данных</h3>
+                        <p>Отказ от проприетарных систем. Проектирование слоев (Staging, Intermediate, Marts). Паттерны Кимбалла.</p>
+                    </div>
+                </div>
+                <div class="chapter-item">
+                    <div class="chapter-number">02</div>
+                    <div class="chapter-content">
+                        <h3>dbt Core: От SQL к инженерии</h3>
+                        <p>Настройка окружения, написание первых моделей, работа с материализациями (view, table, incremental) и макросами Jinja.</p>
+                    </div>
+                </div>
+                <div class="chapter-item">
+                    <div class="chapter-number">03</div>
+                    <div class="chapter-content">
+                        <h3>Оркестрация с помощью Airflow</h3>
+                        <p>Настройка последовательности выполнения задач dbt Core. Валидация данных, деплой изменений и работа с состоянием графа зависимостей.</p>
+                    </div>
+                </div>
+                <div class="chapter-item">
+                    <div class="chapter-number">04</div>
+                    <div class="chapter-content">
+                        <h3>Lightdash: BI-as-Code</h3>
+                        <p>Подключение self-hosted BI к PostgreSQL и dbt Core, создание семантического слоя и настройка дашбордов через код.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="author">
+        <div class="container">
+            <div class="author-grid">
+                <div class="author-img">
+                    <img src="/assets/img/author.png" alt="Автор книги Владимир Юсупов">
+                </div>
+                <div class="author-info">
+                    <h3>Владимир Юсупов</h3>
+                    <!-- <span class="author-role">Основатель Data Solutions Lab</span> -->
+                    <p>Эксперт с более чем 15-летним опытом внедрения корпоративных решений для бизнес-аналитики (BI).</p>
+                    <p>Специализируется на проектировании, построении и масштабировании хранилищ данных (DWH) и аналитических систем. На протяжении карьеры успешно совмещал работу над крупными архитектурными проектами в штате компаний с ведением независимой консалтинговой практики.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing">
+        <div class="container">
+            <h2>Доступ к материалам</h2>
+            <p class="section-subtitle"> </p>
+
+            <div class="pricing-single">
+                <div class="price-card">
+                    <!-- <div class="popular-badge">Ранний доступ</div> -->
+                    <h3>Электронная книга</h3>
+                    <div class="price-val">1500 ₽</div>
+                    <p class="price-desc">Базовая цифровая версия для комфортного обучения.</p>
+                    
+                    <ul class="price-features">
+                        <li>Формат: PDF</li>
+                        <li>Исходный код всех объектов</li>
+                        <li>Скрипт для развертывания проекта</li>
+                        <li>Поддержка и сопровождение</li>
+                        <li>Бесплатные обновления</li>
+                    </ul>
+                    
+                    <!-- <button class="btn" style="width: 100%;">Оплатить</button> -->
+                    <a href="https://yookassa.ru/my/i/aiHSDMezajUY/l" class="btn" style="width: 100%;">Оплатить</a>
+                    <p class="delivery-info">Способ получения: ссылка на скачивание цифровых материалов автоматически отправляется на ваш email сразу после оплаты. На всякий случай, пожалуйста, проверьте папку Спам.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq container">
+        <h2>Частые вопросы</h2>
+        
+        <div class="faq-item">
+            <button class="faq-question">Нужно ли профессионально владеть SQL и Python работы над учебным проектом?</button>
+            <div class="faq-answer">
+                <p>Нет, достаточно базовых знаний SQL и Python. Весь код подробно разбирается и поясняется в книге (в том числе, Jinja-макросы и команды терминала).</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">В каком формате предоставляется книга?</button>
+            <div class="faq-answer">
+                <p>Вы получите сверстанный PDF-файл высокого разрешения, удобный для чтения с экрана, а также ссылку на GitHub-репозиторий с исходным кодом и скриптом развертывания проекта.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Что значит поддержка и сопровождение?</button>
+            <div class="faq-answer">
+                <p>Вам будет предостален доступ к сообществу книги и учебного проекта в GitHub Discussions. Там можно задать вопрос, обсудить архитектурные подходы, предложить улучшение технологических решений или же просто найти единомышленников.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Как я получу обновления книги?</button>
+            <div class="faq-answer">
+                <p>Это "живой" продукт. При выходе "мажорных" версий основного программного обеспечения проекта (dbt Core), в книгу будут вноситься правки. Далее вы получите обновленную версию книги на вашу электронную почту.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Зачем мне платить, если есть бесплатная версия книги?</button>
+            <div class="faq-answer">
+                <p>Да, вы можете читать книгу и выполнять учебный проект совершенно бесплатно на сайте (dwh-book.ru). В платной версии вы получаете доступ к исходному репозиторию проекта и удобный скрипт развертывания, а также поддержку автора при работе с проектом.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            
+            <div class="footer-legal">
+                <p>Плательщик НПД (Самозанятый): Юсупов Владимир Маратович</p>
+                <p>ИНН: 645493405700 | Email: hello@datasolutionslab.ru</p>
+                
+                <div class="legal-links">
+                    <a href="oferta.html" target="_blank">Договор-оферта</a>
+                    <a href="privacy.html" target="_blank">Политика конфиденциальности</a>
+                </div>
+            </div>
+
+            <p class="copyright">© 2026 Владимир Юсупов. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Логика работы аккордеона FAQ
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const faqAnswer = faqItem.querySelector('.faq-answer');
+                
+                // Закрываем все остальные открытые вопросы (опционально)
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if(item !== faqItem) {
+                        item.classList.remove('active');
+                        item.querySelector('.faq-answer').style.maxHeight = null;
+                    }
+                });
+
+                // Тогглим текущий
+                faqItem.classList.toggle('active');
+                if (faqItem.classList.contains('active')) {
+                    faqAnswer.style.maxHeight = faqAnswer.scrollHeight + "px";
+                } else {
+                    faqAnswer.style.maxHeight = null;
+                }
+            });
+        });
+
+        // Плавный скролл для кнопок, ведущих к якорям (id="buy")
+        document.querySelectorAll('a.smooth-scroll').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

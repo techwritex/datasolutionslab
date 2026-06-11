@@ -4,20 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Data Solutions Lab - Лаборатория решений в области данных">
-    <title>{{ page.title }} | {{ site.title }}</title>
-    <link rel="icon" type="image/svg+xml" href="{{ '/assets/img/favicon.svg' | relative_url }}">
-    <link rel="alternate icon" type="image/png" href="{{ '/assets/img/favicon.png' | relative_url }}">
+    <title>{{ page.title }} | Data Solutions Lab</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
   </head>
 <body>
-  {% include navigation.html %}
-  <main class="container">
-    {{ content }}
+
+  <nav class="site-nav">
+    <div class="container nav-container">
+      <a href="{{ '/' | relative_url }}" class="nav-prompt-link">
+        <span class="nav-prompt">dsl@root:~$</span>
+        <span class="cursor">_</span>
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="{{ '/#services' | relative_url }}" class="nav-link">./услуги</a></li>
+        <li><a href="{{ '/#tech' | relative_url }}" class="nav-link">./технологии</a></li>
+        <li><a href="{{ '/notes/' | relative_url }}" class="nav-link">./заметки</a></li>
+        <li><a href="{{ '/#contact' | relative_url }}" class="nav-link">./контакты</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="page-content">
+    <div class="container">
+      {{ content }}
+    </div>
   </main>
-  <footer class="footer">
-    <p>&copy; {{ site.time | date: '%Y' }} Владимир Юсупов</p>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Data Solutions Lab. Владимир Юсупов.</p>
+    </div>
   </footer>
+
 </body>
-  {% include google_analytics.html %}
 </html>

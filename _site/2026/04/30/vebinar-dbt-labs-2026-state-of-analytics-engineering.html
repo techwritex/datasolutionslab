@@ -5,49 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Data Solutions Lab - Лаборатория решений в области данных">
     <title>Вебинар от dbt Labs: 2026 State of Analytics Engineering | Data Solutions Lab</title>
-    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
-    <link rel="alternate icon" type="image/png" href="/assets/img/favicon.png">
     
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/main.css">
   </head>
 <body>
-  <header id="header">
-  <div class="container nav-inner">
-      <a href="/" class="logo">DataSolutions<span>Lab</span></a>
+
+  <nav class="site-nav">
+    <div class="container nav-container">
+      <a href="/" class="nav-prompt-link">
+        <span class="nav-prompt">dsl@root:~$</span>
+        <span class="cursor">_</span>
+      </a>
       
       <ul class="nav-links">
-          
-          <li>
-              <a href="/#services">Услуги</a>
-          </li>
-          
-          <li>
-              <a href="/#tech">Технологии</a>
-          </li>
-          
-          <li>
-              <a href="/notes/">Заметки</a>
-          </li>
-          
-          <li>
-              <a href="/#manager">Контакты</a>
-          </li>
-          
-          <li>
-              <a href="/dwh-book" class="btn" style="padding: 10px 20px; font-size: 0.9rem; color: #fff;">Купить книгу</a>
-          </li>
+        <li><a href="/#services" class="nav-link">./услуги</a></li>
+        <li><a href="/#tech" class="nav-link">./технологии</a></li>
+        <li><a href="/notes/" class="nav-link">./заметки</a></li>
+        <li><a href="/#contact" class="nav-link">./контакты</a></li>
       </ul>
-  </div>
-</header>
+    </div>
+  </nav>
+
+  <main class="page-content">
+    <div class="container">
+      <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
   
-  <main>
-    <article class="container post-content">
   <header class="post-header">
-    <p class="post-meta">30.04.2026</p>
-    <h1>Вебинар от dbt Labs: 2026 State of Analytics Engineering</h1>
+    <div class="post-meta-top">
+      <time class="dt-published" datetime="2026-04-30T00:00:00+03:00" itemprop="datePublished">
+        30.04.2026
+      </time></div>
+    <h1 class="post-title p-name" itemprop="name headline">Вебинар от dbt Labs: 2026 State of Analytics Engineering</h1>
   </header>
 
-  <section class="post-body">
+  <div class="post-content e-content" itemprop="articleBody">
     <p>Вчера прошел вебинар от dbt Labs на тему <a href="https://www.linkedin.com/events/7449929146417233920/">2026 State of Analytics Engineering</a>. Поделюсь некоторыми своими заметками и мыслями.</p>
 
 <p>Факт, что использование ИИ оказывает значительное влияние пусть пока не на все, но на многие професии. Сфера работы с данными не является каким-то исключением. Поэтому тектонический сдвиг зафиксирован и в нашей индустрии.</p>
@@ -64,36 +56,23 @@
 
 <p>ИИ не заменит полностью инженера (по крайней мере, пока), но он окончательно разделит рынок на тех, кто просто пишет код и создаёт модели, и тех, кто гарантирует проектирует системы и гарантирует качество данных. Прошло время измерения продуктивности количеством таблиц и пришел черёд измерения отсутствием ошибок. Но игнорировать ИИ уже тоже не получится. Это серёзный фактор, который необходимо учитывать и стараться максимально осознанно применять в своей работе.</p>
 
-  </section>
+  </div>
 
-  <footer class="post-footer">
-    
-    <div style="background: #fdfdfd; border: 1px solid var(--border-color); border-left: 4px solid var(--primary-color); padding: 24px; border-radius: 8px;">
-        <h4 style="margin-bottom: 10px;">Прокачайте свои навыки архитектуры данных</h4>
-        <p style="margin: 0; font-size: 1rem;">Развернутые принципы проектирования и создания аналитических хранилищ читайте в моем новом практическом руководстве: 
-           <a href="/dwh-book" style="font-weight: 600;">Платформа данных на open-source →</a>
-        </p>
-    </div>
-    
+  <footer class="post-navigation">
+    <a href="/notes/" class="back-to-notes">
+      <span class="arrow">←</span> cd ../notes
+    </a>
   </footer>
+
 </article>
+    </div>
   </main>
-  
-  <footer>
+
+  <footer class="site-footer">
     <div class="container">
-        <p>&copy; 2026 Владимир Юсупов | Data Solutions Lab</p>
+      <p>&copy; 2026 Data Solutions Lab. Владимир Юсупов.</p>
     </div>
   </footer>
 
-  
-
-  <script>
-      // Скрипт для добавления тени шапке при скролле
-      const header = document.getElementById('header');
-      window.addEventListener('scroll', () => {
-          if (window.scrollY > 10) { header.classList.add('scrolled'); } 
-          else { header.classList.remove('scrolled'); }
-      });
-  </script>
 </body>
 </html>

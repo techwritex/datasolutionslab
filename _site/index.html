@@ -5,131 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Data Solutions Lab - Лаборатория решений в области данных">
     <title>Главная | Data Solutions Lab</title>
-    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
-    <link rel="alternate icon" type="image/png" href="/assets/img/favicon.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
   </head>
 <body>
+
   <nav class="site-nav">
-    <div class="nav-container">
+    <div class="container nav-container">
       <a href="/" class="nav-prompt-link">
         <span class="nav-prompt">dsl@root:~$</span>
+        <span class="cursor">_</span>
       </a>
       
       <ul class="nav-links">
-        
-          <li>
-            <a href="/#services" class="nav-link">
-              ./услуги
-            </a>
-          </li>
-        
-          <li>
-            <a href="/#tech" class="nav-link">
-              ./технологии
-            </a>
-          </li>
-        
-          <li>
-            <a href="/notes/" class="nav-link">
-              ./заметки
-            </a>
-          </li>
-        
-          <li>
-            <a href="/#manager" class="nav-link">
-              ./контакты
-            </a>
-          </li>
-        
+        <li><a href="/#services" class="nav-link">./услуги</a></li>
+        <li><a href="/#tech" class="nav-link">./технологии</a></li>
+        <li><a href="/notes/" class="nav-link">./заметки</a></li>
+        <li><a href="/#contact" class="nav-link">./контакты</a></li>
       </ul>
     </div>
-</nav>
-  <main class="container">
-    <section class="hero">
-    <p style="opacity: 0.5;">[system]: initialising data_solutions_lab...</p>
-    <h1>data solutions lab</h1>
-    <p>Внедрение аналитических систем для принятия решений на основе данных</p>
-  </section>
+  </nav>
 
-<section id="services">
-    <h2>Услуги</h2>
-    <div class="services-grid">
-      
-      <div class="service-card">
-        <h3>Проектирование DWH</h3>
-        <p>Создание фундамента для работы с данными: от схем хранения до автоматизации ETL/ELT процессов</p>
-        <small style="opacity: 0.7;">Перевод бизнес-требований на язык техспецификаций и обеспечение чистоты данных.</small>
-      </div>
-      
-      <div class="service-card">
-        <h3>Сквозная аналитика и BI</h3>
-        <p>Построение отчетности и дашбордов для принятия управленческих решений</p>
-        <small style="opacity: 0.7;">Сокращение времени на получение ответов на основе данных.</small>
-      </div>
-      
-    </div>
+  <main class="page-content">
+    <div class="container">
+      <section class="hero">
+  <div class="hero-badge">Лаборатория решений для работы с данными</div>
+  <h1>Data Solutions Lab</h1>
+  <p class="hero-subtitle">
+    Проектирование и внедрение решений для бизнес-аналитики. 
+  </p>
 </section>
 
-<section id="tech">
-    <h2>ls ./technologies</h2>
-    <div class="tech-stack">
-      
-      <span class="tech-item">PostgreSQL</span>
-      
-      <span class="tech-item">dbt</span>
-      
-      <span class="tech-item">Apache Airflow</span>
-      
-      <span class="tech-item">Apache Superset</span>
-      
-      <span class="tech-item">Yandex DataLens</span>
-      
-      <span class="tech-item">др.</span>
-      
+<section id="services" class="section-block">
+  <h2>&gt; cat services.md</h2>
+  <div class="grid-cards">
+    <div class="card">
+      <h3>Архитектура Хранилищ (DWH)</h3>
+      <p>Проектирование надежных и масштабируемых хранилищ в качестве единых источников достоверных данных.</p>
+    </div>
+    <div class="card">
+      <h3>BI-as-Code &amp; Аналитика</h3>
+      <p>Внедрение современных BI-инструментов с управлением дашбордами через код по стандартам программной инженерии.</p>
+    </div>
+    <div class="card">
+      <h3>Docs-as-Code &amp; TechComm</h3>
+      <p>Выстраивание процессов создания технической документации для разработчиков, дата-инженеров и аналитиков.</p>
+    </div>
+  </div>
+</section>
+
+<section id="tech" class="section-block">
+  <h2>&gt; ls ./technologies</h2>
+  <div class="tech-list">
+    <span class="tech-tag">PostgreSQL</span>
+    <span class="tech-tag">dbt</span>
+    <span class="tech-tag">Apache Airflow</span>
+    <span class="tech-tag">Lightdash</span>
+    <span class="tech-tag">Yandex Cloud</span>
+  </div>
+</section>
+
+<section id="ecosystem" class="section-block ecosystem-block">
+    <h2>&gt; ls -la /projects/</h2>
+    <div class="project-list">
+      <a href="https://dwh-book.ru/" target="_blank" class="project-item">
+        <span class="project-name">dwh-book.ru</span>
+        <span class="project-desc">Открытое практическое руководство по хранилищам данных и dbt</span>
+      </a>
+      <a href="https://datasolutionslab.ru/dwh-book" target="_blank" class="project-item">
+        <span class="project-name">Книга "Платформа данных на open-source"</span>
+        <span class="project-desc">Практическое руководство по созданию хранилища данных и аналитической системы на базе dbt Core, PostgreSQL, Airflow и Lightdash.</span>
+      </a>
+      <a href="https://techcommpod.ru/" target="_blank" class="project-item">
+        <span class="project-name">TechCommPod</span>
+        <span class="project-desc">Подкаст о техкоммуникации для инженеров и техписателей</span>
+      </a>
+      <a href="https://techcommpod.ru/meetup/" target="_blank" class="project-item">
+        <span class="project-name">TCP Online Meetup</span>
+        <span class="project-desc">Сообщество и митапы по инженерной (и не только) документации</span>
+      </a>
     </div>
   </section>
 
-<section id="manager" class="manager-section">
-    <h2>whoami</h2>
-    <p><strong>Владимир Юсупов</strong> — эксперт с более чем 15-летним опытом в индустрии. Быстро погружаюсь в предметную область (домен) и перевожу сложные бизнес-задачи в надежное техническое решение.</p>
-    <p>Автор практического руководства по созданию хранилищ данных на open source: 
-       <a href="https://dwh-book.ru/" target="_blank">dwh-book.ru</a>.
-    </p>
-    <p>Автор и ведущий подкаста о техкоммуникации для инженеров и техписателей: 
-        <a href="https://techcommpod.ru/" target="_blank">TechCommPod</a>.
-    </p>
-    <p>Организатор и модератор митапа по техкоммуникации: 
-        <a href="https://techcommpod.ru/meetup/" target="_blank">TechCommPod Online Meetup</a>.
-    </p>
-  </section>
-
-<section id="contact" class="contact-section">
-    <h2>sudo contact --send-message</h2>
-    <div class="contact-box">
-      <p>Есть задача по работе с данными? Напишите мне напрямую:</p>
-      <ul class="contact-list">
-        <li><strong>Telegram:</strong> <a href="https://t.me/vladimiryusupov">@vladimiryusupov</a></li>
-        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/vladimir-yusupov/">Vladimir Yusupov</a> </li>
-        <li><strong>Email:</strong> <a href="mailto:hello@datasolutionslab.ru">hello@datasolutionslab.ru</a></li>
-      </ul>
-      <p style="opacity: 0.6; font-size: 0.8rem;">[system]: ожидание входящего соединения...</p>
+<section id="about" class="section-block">
+    <h2>&gt; whoami</h2>
+    <div class="about-content">
+      <h3 class="about-name">Владимир Юсупов</h3>
+      <p class="about-text">
+        Эксперт с более чем 15-летним опытом внедрения корпоративных решений для бизнес-аналитики (BI). 
+        Специализируюсь на проектировании, построении и масштабировании хранилищ данных (DWH) и аналитических систем. На протяжении карьеры успешно совмещаю работу над крупными архитектурными проектами в штате компаний с ведением независимой консалтинговой практики.
+      </p>
     </div>
   </section>
 
+<section id="contact" class="section-block terminal-box">
+  <div class="terminal-header">
+    <span class="dot red"></span>
+    <span class="dot yellow"></span>
+    <span class="dot green"></span>
+    <span class="terminal-title">contact.sh</span>
+  </div>
+  <div class="terminal-body">
+    <p class="cmd">sudo contact --send-message</p>
+    <p class="comment"># Есть задача по работе с данными? Напишите мне напрямую:</p>
+    <ul class="contact-list">
+      <li><span class="key">LinkedIn:</span> <a href="https://www.linkedin.com/in/vladimir-yusupov/" target="_blank">Vladimir Yusupov</a></li>
+      <li><span class="key">Email:</span> <a href="mailto:hello@datasolutionslab.ru">hello@datasolutionslab.ru</a></li>
+    </ul>
+    <p class="system-msg">[system]: ожидание входящего соединения...</p>
+  </div>
+</section>
+
+    </div>
   </main>
-  <footer class="footer">
-    <p>&copy; 2026 Владимир Юсупов</p>
-  </footer>
-</body>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XRRRF9FBGB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-XRRRF9FBGB');
-</script>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Data Solutions Lab. Владимир Юсупов.</p>
+    </div>
+  </footer>
+
+</body>
 </html>

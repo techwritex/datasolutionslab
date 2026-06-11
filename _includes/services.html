@@ -1,12 +1,17 @@
-<section id="services">
-    <h2>Услуги</h2>
-    <div class="services-grid">
-      {% for service in site.data.services %}
-      <div class="service-card">
-        <h3>{{ service.title }}</h3>
-        <p>{{ service.description }}</p>
-        <small style="opacity: 0.7;">{{ service.details }}</small>
-      </div>
-      {% endfor %}
+<section id="services" class="section-block">
+  <h2>> cat services.md</h2>
+  <div class="grid-cards">
+    <div class="card">
+      <h3>Архитектура Хранилищ (DWH)</h3>
+      <p>Проектирование надежных и масштабируемых хранилищ в качестве единых источников достоверных данных.</p>
     </div>
+    <div class="card">
+      <h3>BI-as-Code & Аналитика</h3>
+      <p>Внедрение современных BI-инструментов с управлением дашбордами через код по стандартам программной инженерии.</p>
+    </div>
+    <div class="card">
+      <h3>Docs-as-Code & TechComm</h3>
+      <p>Выстраивание процессов создания технической документации для разработчиков, дата-инженеров и аналитиков.</p>
+    </div>
+  </div>
 </section>

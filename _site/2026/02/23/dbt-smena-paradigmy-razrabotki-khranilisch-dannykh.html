@@ -5,55 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Data Solutions Lab - Лаборатория решений в области данных">
     <title>dbt: смена парадигмы разработки хранилищ данных | Data Solutions Lab</title>
-    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
-    <link rel="alternate icon" type="image/png" href="/assets/img/favicon.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
   </head>
 <body>
+
   <nav class="site-nav">
-    <div class="nav-container">
+    <div class="container nav-container">
       <a href="/" class="nav-prompt-link">
         <span class="nav-prompt">dsl@root:~$</span>
+        <span class="cursor">_</span>
       </a>
       
       <ul class="nav-links">
-        
-          <li>
-            <a href="/#services" class="nav-link">
-              ./услуги
-            </a>
-          </li>
-        
-          <li>
-            <a href="/#tech" class="nav-link">
-              ./технологии
-            </a>
-          </li>
-        
-          <li>
-            <a href="/notes/" class="nav-link">
-              ./заметки
-            </a>
-          </li>
-        
-          <li>
-            <a href="/#manager" class="nav-link">
-              ./контакты
-            </a>
-          </li>
-        
+        <li><a href="/#services" class="nav-link">./услуги</a></li>
+        <li><a href="/#tech" class="nav-link">./технологии</a></li>
+        <li><a href="/notes/" class="nav-link">./заметки</a></li>
+        <li><a href="/#contact" class="nav-link">./контакты</a></li>
       </ul>
     </div>
-</nav>
-  <main class="container">
-    <article class="post-content">
+  </nav>
+
+  <main class="page-content">
+    <div class="container">
+      <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  
   <header class="post-header">
-    <p class="post-meta">[system]: монтирование раздела /expertise/dwh... OK</p>
-    <h1>dbt: смена парадигмы разработки хранилищ данных</h1>
+    <div class="post-meta-top">
+      <time class="dt-published" datetime="2026-02-23T00:00:00+03:00" itemprop="datePublished">
+        23.02.2026
+      </time></div>
+    <h1 class="post-title p-name" itemprop="name headline">dbt: смена парадигмы разработки хранилищ данных</h1>
   </header>
 
-  <section class="post-body">
+  <div class="post-content e-content" itemprop="articleBody">
     <p>Более 15 лет я работал с продуктами семейства SAP. Это был путь глубокой экспертизы в рамках одного вендора. Но сегодня рынок BI-решений в России оказался на развилке: либо продолжать эксплуатацию “застывших” систем без поддержки, либо искать альтернативу в open-source.</p>
 
 <p>В своих поисках я открыл для себя <strong>dbt (data build tool)</strong>. Но это не просто инструмент, это смена подхода и процессов разработки хранилищ данных.</p>
@@ -70,32 +56,23 @@
 
 <p>Я опубликовал подробное практическое руководство по dbt, где на примере прототипа хранилища данных для каршеринговой компании разбираю все этапы: от развертывания проекта до создания витрин и оркестрации.</p>
 
-  </section>
+  </div>
 
-  <footer class="post-footer">
-    <p>---</p>
-    
-    
-    <p>Развернутые принципы проектирования читайте в моем руководстве: 
-       <a href="https://dwh-book.ru/" target="_blank">dwh-book.ru</a>
-    </p>
-    
-
-    <p class="terminal-end">EOF</p>
+  <footer class="post-navigation">
+    <a href="/notes/" class="back-to-notes">
+      <span class="arrow">←</span> cd ../notes
+    </a>
   </footer>
+
 </article>
+    </div>
   </main>
-  <footer class="footer">
-    <p>&copy; 2026 Владимир Юсупов</p>
-  </footer>
-</body>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XRRRF9FBGB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-XRRRF9FBGB');
-</script>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Data Solutions Lab. Владимир Юсупов.</p>
+    </div>
+  </footer>
+
+</body>
 </html>

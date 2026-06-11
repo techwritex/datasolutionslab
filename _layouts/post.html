@@ -1,25 +1,31 @@
 ---
 layout: default
 ---
-<article class="post-content">
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  
   <header class="post-header">
-    <p class="post-meta">{{ page.system_msg | default: "[system]: монтирование раздела /expertise/dwh... OK" }}</p>
-    <h1>{{ page.title }}</h1>
+    <div class="post-meta-top">
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {{ page.date | date: "%d.%m.%Y" }}
+      </time>
+      {%- if page.author -%}
+        <span class="meta-separator">/</span>
+        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span class="p-author h-card" itemprop="name">{{ page.author }}</span>
+        </span>
+      {%- endif -%}
+    </div>
+    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
   </header>
 
-  <section class="post-body">
+  <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
-  </section>
+  </div>
 
-  <footer class="post-footer">
-    <p>---</p>
-    
-    {% if page.show_guide_link != false %}
-    <p>Развернутые принципы проектирования и создания хранилищ с использованием dbt читайте в моем руководстве: 
-       <a href="https://dwh-book.ru/" target="_blank">dwh-book.ru</a>
-    </p>
-    {% endif %}
-
-    <p class="terminal-end">{{ page.terminal_end | default: "" }}</p>
+  <footer class="post-navigation">
+    <a href="{{ '/notes/' | relative_url }}" class="back-to-notes">
+      <span class="arrow">←</span> cd ../notes
+    </a>
   </footer>
+
 </article>

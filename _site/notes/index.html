@@ -5,76 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Data Solutions Lab - Лаборатория решений в области данных">
     <title>Заметки | Data Solutions Lab</title>
-    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
-    <link rel="alternate icon" type="image/png" href="/assets/img/favicon.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
   </head>
 <body>
+
   <nav class="site-nav">
-    <div class="nav-container">
+    <div class="container nav-container">
       <a href="/" class="nav-prompt-link">
         <span class="nav-prompt">dsl@root:~$</span>
+        <span class="cursor">_</span>
       </a>
       
       <ul class="nav-links">
-        
-          <li>
-            <a href="/#services" class="nav-link">
-              ./услуги
-            </a>
-          </li>
-        
-          <li>
-            <a href="/#tech" class="nav-link">
-              ./технологии
-            </a>
-          </li>
-        
-          <li>
-            <a href="/notes/" class="nav-link">
-              ./заметки
-            </a>
-          </li>
-        
-          <li>
-            <a href="/#manager" class="nav-link">
-              ./контакты
-            </a>
-          </li>
-        
+        <li><a href="/#services" class="nav-link">./услуги</a></li>
+        <li><a href="/#tech" class="nav-link">./технологии</a></li>
+        <li><a href="/notes/" class="nav-link">./заметки</a></li>
+        <li><a href="/#contact" class="nav-link">./контакты</a></li>
       </ul>
     </div>
-</nav>
-  <main class="container">
-    <section class="notes-section">
-  <h2>ls ./notes</h2>
+  </nav>
+
+  <main class="page-content">
+    <div class="container">
+      <section class="notes-section">
+  <h2>&gt; ls -la ./notes</h2>
+  
   <div class="notes-container">
-    <ul class="notes-list">
+    <div class="notes-list">
       
-        <li class="note-item">
-          <span class="note-date">2026-02-23</span>
-          <span class="note-pointer"> &gt;&gt; </span>
+        <article class="note-item">
+          <time class="note-date" datetime="2026-05-05T00:00:00+03:00">
+            2026-05-05
+          </time>
+          <span class="note-pointer"></span>
+          <a href="/2026/05/05/pereosmyslenie-bi-ot-risovaniya-dashbordov-do-agentskoj-enzhenerii.html" class="note-link">Переосмысление BI - от рисования дашбордов к Агентской Инженерии</a>
+        </article>
+      
+        <article class="note-item">
+          <time class="note-date" datetime="2026-04-30T00:00:00+03:00">
+            2026-04-30
+          </time>
+          <span class="note-pointer"></span>
+          <a href="/2026/04/30/vebinar-dbt-labs-2026-state-of-analytics-engineering.html" class="note-link">Вебинар от dbt Labs: 2026 State of Analytics Engineering</a>
+        </article>
+      
+        <article class="note-item">
+          <time class="note-date" datetime="2026-02-23T00:00:00+03:00">
+            2026-02-23
+          </time>
+          <span class="note-pointer"></span>
           <a href="/2026/02/23/dbt-smena-paradigmy-razrabotki-khranilisch-dannykh.html" class="note-link">dbt: смена парадигмы разработки хранилищ данных</a>
-        </li>
+        </article>
       
-    </ul>
+    </div>
   </div>
-  <p class="terminal-footer">[system]: найдено записей: 1</p>
+  
+  <p class="terminal-footer">[system]: общее количество нод в директории: 3</p>
 </section>
 
+    </div>
   </main>
-  <footer class="footer">
-    <p>&copy; 2026 Владимир Юсупов</p>
-  </footer>
-</body>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XRRRF9FBGB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-XRRRF9FBGB');
-</script>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Data Solutions Lab. Владимир Юсупов.</p>
+    </div>
+  </footer>
+
+</body>
 </html>
